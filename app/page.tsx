@@ -18,10 +18,8 @@ interface Weather {
   };
   weather: {
     main: string;
+    icon: string;
   }[];
-  wind: {
-    speed: number;
-  };
 }
 
 export default async function Home() {
