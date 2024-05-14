@@ -41,8 +41,10 @@ const weatherEmojis: { [key: string]: string } = {
 };
 
 export default async function Home() {
-  const latitude = headers().get("x-latitude") || "37.1289771";
-  const longitude = headers().get("x-longitude") || "-84.0832646";
+  /*const latitude = headers().get("x-latitude") || "37.1289771";
+  const longitude = headers().get("x-longitude") || "-84.0832646";*/
+  const latitude = "37.1289771";
+  const longitude = "-84.0832646";
 
   const weather: Weather = await fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${process.env.OPENWEATHERMAP_API_KEY}`,
@@ -62,7 +64,7 @@ export default async function Home() {
               °C
             </span>
           </p>
-          <p className="mt-4">{weather.name}</p>
+          <p className="mt-4">{weather.name} </p>
         </div>
       </div>
     </div>
