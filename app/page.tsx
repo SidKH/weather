@@ -36,7 +36,7 @@ const weatherEmojis: { [key: string]: string } = {
 };
 
 export default async function Home() {
-  const location = headers().get("x-hello-from-middleware2");
+  const location = headers().get("x-location");
 
   console.log(location, 333);
 
