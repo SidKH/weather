@@ -1,5 +1,13 @@
-import { NextRequest } from "next/server";
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
 export function middleware(request: NextRequest) {
-  console.log(request.geo);
+  if (request.geo) {
+    const response = NextResponse.next();
+    response.headers.set(
+      "x-location",
+      `${request.geo.latitude},${request.geo.longitude}`
+    );
+    return response;
+  }
 }

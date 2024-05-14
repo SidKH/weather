@@ -36,9 +36,9 @@ const weatherEmojis: { [key: string]: string } = {
 };
 
 export default async function Home() {
-  const forwardedFor = headers().get("x-forwarded-for");
+  const location = headers().get("x-hello-from-middleware2");
 
-  console.log(forwardedFor, 999);
+  console.log(location, 333);
 
   const weather: Weather = await fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=40.6501&lon=-8.6502&appid=${process.env.OPENWEATHERMAP_API_KEY}`,
